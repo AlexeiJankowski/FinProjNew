@@ -2,6 +2,7 @@
 using FinProjNew.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -22,20 +23,19 @@ namespace FinProjNew.Pages
         }
 
         [BindProperty]
-        public QuoteParam Param { get; set; }
-        [BindProperty]
-        public List<Ticker> TickersList { get; set; }
+        public QuoteParam Param { get; set; } = new QuoteParam();
+        [BindProperty(SupportsGet = true)]
+        public List<SelectListItem> TickersList { get; set; }
         [BindProperty]
         public List<Quote> QuotesList { get; set; }
 
         public void OnGet()
         {
-
+            TickersList = _context.Tickers.Select(x => new SelectListItem { Text = x.TickerName, Value = x.TickerValue }).ToList();
         }
 
         public IActionResult OnPost()
-        {
-            TickersList = _context.Tickers.ToList();
+        {            
             QuotesList = CreateRequest(Param);
 
             return Page();

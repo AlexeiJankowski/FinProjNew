@@ -1,0 +1,15 @@
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\FinProjNew.Data.deps.json
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\FinProjNew.Data.dll
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\ref\FinProjNew.Data.dll
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\FinProjNew.Data.pdb
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\FinProjNew.Core.dll
+C:\projects\FinProjNew\FinProjNew.Data\bin\Debug\net5.0\FinProjNew.Core.pdb
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.csproj.AssemblyReference.cache
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.AssemblyInfoInputs.cache
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.AssemblyInfo.cs
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.csproj.CoreCompileInputs.cache
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.csproj.CopyComplete
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.dll
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\ref\FinProjNew.Data.dll
+C:\projects\FinProjNew\FinProjNew.Data\obj\Debug\net5.0\FinProjNew.Data.pdb

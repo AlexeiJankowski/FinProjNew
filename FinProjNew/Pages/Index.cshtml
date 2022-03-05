@@ -10,7 +10,7 @@
 <head>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+   @* <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -32,7 +32,7 @@
             var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
-    </script>
+    </script>*@
     <script type="text/javascript">
         window.onload = function () {
             var name = document.getElementById('tickers').options[document.getElementById('tickers').selectedIndex].innerHTML;
@@ -55,26 +55,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3">
-
                 <form method="post" asp-action="Index">
 
                     <div class="form-group">
-                        <select id="tickers" class="form-control" name="ticker">
-                            @foreach(Ticker ticker in Model.TickersList)
-                            {
-                                if (ticker.TickerValue.ToLower() == ViewBag.Ticker.ToLower())
-                                {
-                                    <option value='@ticker.TickerValue' selected>@ticker.TickerName</option>
-                                }
-                                else
-                                {
-                                    <option value='@ticker.TickerValue'>@ticker.TickerName</option>
-                                }
-                            }
-                        </select>
+                        <label asp-for="Param.Ticker" class="control-label"></label>
+                        <select asp-for="Param.Ticker" class="form-control" asp-items="Model.TickersList"></select>
                     </div>
-
-
                     <div class="form-group">
                         <select id="periods" class="form-control" name="period">
                             <option value='1d'>Daily</option>
@@ -82,15 +68,14 @@
                             <option value='1mo'>Montly</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label name="startDate">Start Date: </label>
-                        <input name="startDate" class="form-control" value="@DateTime.Now.Subtract(new TimeSpan(50,0,0,0)).ToShortDateString()" />
+                        <label asp-for="Param.StartPeriod" class="control-label"></label>
+                        <input asp-for="Param.StartPeriod" class="form-control" />
                     </div>
 
                     <div class="form-group">
-                        <label name="endDate">End Date: </label>
-                        <input name="endDate" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+                        <label asp-for="Param.EndPeriod" class="control-label"></label>
+                        <input asp-for="Param.EndPeriod" class="form-control" />
                     </div>
 
                     <button class="btn btn-dark" type="submit">Load Chart</button>

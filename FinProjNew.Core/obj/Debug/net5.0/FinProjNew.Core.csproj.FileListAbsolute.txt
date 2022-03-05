@@ -1,0 +1,15 @@
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\FinProjNew.Core.deps.json
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\FinProjNew.Core.dll
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\ref\FinProjNew.Core.dll
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\FinProjNew.Core.pdb
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.csproj.AssemblyReference.cache
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.AssemblyInfoInputs.cache
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.AssemblyInfo.cs
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.csproj.CoreCompileInputs.cache
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.dll
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\ref\FinProjNew.Core.dll
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.pdb
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\FinProjNew.Core.runtimeconfig.json
+C:\projects\FinProjNew\FinProjNew.Core\bin\Debug\net5.0\FinProjNew.Core.runtimeconfig.dev.json
+C:\projects\FinProjNew\FinProjNew.Core\obj\Debug\net5.0\FinProjNew.Core.genruntimeconfig.cache
