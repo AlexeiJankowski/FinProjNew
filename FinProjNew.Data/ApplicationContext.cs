@@ -22,5 +22,6 @@ namespace FinProjNew.Data
         }
 
         public DbSet<Ticker> Tickers { get; set; }
+        
     }
 }

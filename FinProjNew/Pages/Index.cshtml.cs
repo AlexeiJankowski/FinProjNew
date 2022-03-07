@@ -3,6 +3,8 @@ using FinProjNew.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -28,10 +30,21 @@ namespace FinProjNew.Pages
         public List<SelectListItem> TickersList { get; set; }
         [BindProperty]
         public List<Quote> QuotesList { get; set; }
+        
 
         public void OnGet()
         {
+            if(!_context.Tickers.Any())
+            {
+                List<Ticker> tickers = Parse.GetTickers("https://finance.yahoo.com/commodities");
+                foreach(var ticker in tickers)
+                {
+                    _context.Tickers.Add(ticker);
+                }
+                _context.SaveChanges();
+            }
             TickersList = _context.Tickers.Select(x => new SelectListItem { Text = x.TickerName, Value = x.TickerValue }).ToList();
+            TickersList.Insert(0, new SelectListItem { Text = "Select a ticker", Value = "" });
         }
 
         public IActionResult OnPost()

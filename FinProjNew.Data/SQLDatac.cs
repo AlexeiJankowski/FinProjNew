@@ -19,6 +19,11 @@ namespace FinProjNew.Data
             _context = context;
         }
 
+        public SQLData()
+        {
+
+        }
+
         public List<Ticker> ReadTickers()
         {
             
@@ -36,16 +41,16 @@ namespace FinProjNew.Data
 
         public void WriteTickers()
         {
-            
-                _context.Database.EnsureCreated();
-
+            bool dbIsEmpty = _context.Tickers.SingleOrDefault(x => x.Id == 0) == null;
+            if (!dbIsEmpty)
+            {
                 List<Ticker> tickers = Parse.GetTickers("https://finance.yahoo.com/commodities");
                 foreach (var ticker in tickers)
-                {                    
-                    _context.Tickers.Add(ticker);                    
+                {
+                    _context.Tickers.Add(ticker);
                 }
                 _context.SaveChanges();
-             
+            }                           
         }           
     }
 }
