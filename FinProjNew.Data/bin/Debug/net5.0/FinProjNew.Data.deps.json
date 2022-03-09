@@ -9,18 +9,18 @@
       "FinProjNew.Data/1.0.0": {
         "dependencies": {
           "FinProjNew.Core": "1.0.0",
-          "HtmlAgilityPack": "1.11.42",
+          "HtmlAgilityPack": "1.11.27",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
         },
         "runtime": {
           "FinProjNew.Data.dll": {}
         }
       },
-      "HtmlAgilityPack/1.11.42": {
+      "HtmlAgilityPack/1.11.27": {
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
-            "assemblyVersion": "1.11.42.0",
-            "fileVersion": "1.11.42.0"
+            "assemblyVersion": "1.11.27.0",
+            "fileVersion": "1.11.27.0"
           }
         }
       },
@@ -1055,12 +1055,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "HtmlAgilityPack/1.11.42": {
+    "HtmlAgilityPack/1.11.27": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LDc1bEfF14EY2DZzak4xvzWvbpNXK3vi1u0KQbBpLUN4+cx/VrvXhgCAMSJhSU5vz0oMfW9JZIR20vj/PkDHPA==",
-      "path": "htmlagilitypack/1.11.42",
-      "hashPath": "htmlagilitypack.1.11.42.nupkg.sha512"
+      "sha512": "sha512-FfOBqhAkiwfA4/3OYDQ+ecZRzeZpXNlInw6IopGPBMVhX2EzemGxO+ay4B2NYIrt+7bthYWkyRpX3vljDXZKbg==",
+      "path": "htmlagilitypack/1.11.27",
+      "hashPath": "htmlagilitypack.1.11.27.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",

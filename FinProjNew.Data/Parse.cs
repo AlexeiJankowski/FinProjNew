@@ -14,9 +14,13 @@ namespace FinProjNew.Data
             HtmlWeb web = new HtmlWeb();
             HtmlDocument doc = web.Load(url);
 
-            var datesHeaders = doc.DocumentNode.SelectNodes("//td[@class='Py(10px) Ta(start) Pend(10px)']");
+            var datesHeaders = doc.DocumentNode.SelectNodes("//td[@class='Py(10px) Ta(start) Pend(10px)']");//("//td[@class='Py(10px) Ta(start) Pend(10px)']")
             var quoteHeaders = doc.DocumentNode.SelectNodes("//td[@class='Py(10px) Pstart(10px)']");
                      
+            foreach(var item in datesHeaders)
+            {
+                System.Diagnostics.Debug.WriteLine(item.InnerText);
+            }
 
             foreach(var item in quoteHeaders)
             {

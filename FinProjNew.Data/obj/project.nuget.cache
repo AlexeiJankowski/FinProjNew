@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nxDkMQba5i0GdlrcCTZNYvJYsmLgzdVVlan3CRA21WrbZ2cwSbau9yq1xsEOI7SjW5SrowcUAazwdAb07ECDEg==",
+  "dgSpecHash": "K5a1adPgbumMOU0WFrC1CVBu6hGl3ZBkdJsQIyOI5XiwQVCeHhj3sD+TjvAeb6SXykGG1qXtF2fJZIN2dAcDug==",
   "success": true,
   "projectFilePath": "C:\\projects\\FinProjNew\\FinProjNew.Data\\FinProjNew.Data.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\alexe\\.nuget\\packages\\htmlagilitypack\\1.11.42\\htmlagilitypack.1.11.42.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\htmlagilitypack\\1.11.27\\htmlagilitypack.1.11.27.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

@@ -30,7 +30,10 @@ namespace FinProjNew.Pages
         public List<SelectListItem> TickersList { get; set; }
         [BindProperty]
         public List<Quote> QuotesList { get; set; }
-        
+        [BindProperty]
+        public List<SelectListItem> TimeframeList { get; set; } = new List<SelectListItem>();
+
+
 
         public void OnGet()
         {
@@ -43,12 +46,19 @@ namespace FinProjNew.Pages
                 }
                 _context.SaveChanges();
             }
+
             TickersList = _context.Tickers.Select(x => new SelectListItem { Text = x.TickerName, Value = x.TickerValue }).ToList();
             TickersList.Insert(0, new SelectListItem { Text = "Select a ticker", Value = "" });
+            
+            Timeframe timeframe = new Timeframe();
+            for(int i = 0; i < timeframe.TimeframeName.Count(); i++)
+            {
+                TimeframeList.Add(new SelectListItem { Text = timeframe.TimeframeName[i], Value = timeframe.TimeframeValue[i] });
+            }
         }
 
         public IActionResult OnPost()
-        {            
+        {   
             QuotesList = CreateRequest(Param);
 
             return Page();
@@ -56,7 +66,7 @@ namespace FinProjNew.Pages
 
         public List<Quote> CreateRequest(QuoteParam param)
         {
-            var url = $"https://finance.yahoo.com/quote/{param.Ticker}/history?period1={(param.StartPeriod.AddDays(1)).ToUnixTimeSeconds()}&period2={param.EndPeriod.ToUnixTimeSeconds()}&interval={param.Period}&filter=history&frequency=1d&includeAdjustedClose=true";
+            var url = $"https://finance.yahoo.com/quote/{param.Ticker}/history?period1={(param.StartPeriod.AddDays(1)).ToUnixTimeSeconds()}&period2={param.EndPeriod.ToUnixTimeSeconds()}&interval={param.TimeFrame}&filter=history&frequency=1d&includeAdjustedClose=true";
 
             var quotes = new List<double>();
             var datesHeaders = Parse.GetQuotesHeaders(ref quotes, url);
