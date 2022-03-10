@@ -42,13 +42,21 @@ namespace FinProjNew.Pages
         public IActionResult OnPost()
         {
             LoadMenu();
-            QuotesList = CreateRequest(Param);
-            ViewData["Title"] = _context.Tickers.FirstOrDefault(x => x.TickerValue == Param.Ticker).TickerName;
-            return Page();
+            if (string.IsNullOrEmpty(Param.Ticker) || string.IsNullOrEmpty(Param.TimeFrame))
+            {
+                ViewData["Title"] = "Home Page";
+                return Page();
+            }
+            else
+            {
+                QuotesList = CreateRequest(Param);
+                ViewData["Title"] = _context.Tickers.FirstOrDefault(x => x.TickerValue == Param.Ticker).TickerName;
+                return Page();
+            }            
         }
 
         public List<Quote> CreateRequest(QuoteParam param)
-        {
+        {            
             var url = $"https://finance.yahoo.com/quote/{param.Ticker}/history?period1={(param.StartPeriod.AddDays(1)).ToUnixTimeSeconds()}&period2={param.EndPeriod.ToUnixTimeSeconds()}&interval={param.TimeFrame}&filter=history&frequency=1d&includeAdjustedClose=true";
 
             var quotes = new List<double>();
@@ -78,6 +86,8 @@ namespace FinProjNew.Pages
             {
                 TimeframeList.Add(new SelectListItem { Text = timeframe.TimeframeName[i], Value = timeframe.TimeframeValue[i] });
             }
+
+            TimeframeList.Insert(0, new SelectListItem { Text = "Select a timeframe", Value = "" });
         }
     }
 }
