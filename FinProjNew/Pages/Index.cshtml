@@ -2,9 +2,6 @@
 @using FinProjNew.Core
 
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,24 +33,13 @@
         }
         </script>
     }
-
-    <script type="text/javascript">
-        window.onload = function () {
-            var name = document.getElementById('tickers').options[document.getElementById('tickers').selectedIndex].innerHTML;
-            var period = document.getElementById('periods').options[document.getElementById('periods').selectedIndex].innerHTML;
-            for (var i = 1; i < 3; i++) {
-                document.getElementById("pageName" + [i]).innerHTML = name + ' ' + period + " Chart";
-            }
-        };
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="pageName1"></title>
     <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/css/bootstrap-grid.css" />
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a id="pageName2" class="navbar-brand" href="#">AAPL</a>
+        <a class="navbar-brand" href="#">@ViewData["Title"]</a>
     </nav>
     <br />
     <div class="container-fluid">
@@ -64,7 +50,6 @@
                     <div class="form-group">
                         <label asp-for="Param.Ticker" class="control-label"></label>
                         <select asp-for="Param.Ticker" class="form-control" asp-items="Model.TickersList"></select>
-                        <span asp-validation-for="Param.Ticker"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Param.TimeFrame" class="control-label"></label>

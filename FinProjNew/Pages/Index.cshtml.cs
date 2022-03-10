@@ -33,18 +33,17 @@ namespace FinProjNew.Pages
         [BindProperty]
         public List<SelectListItem> TimeframeList { get; set; } = new List<SelectListItem>();
 
-
-
         public void OnGet()
         {
-            LoadMenu();
+            ViewData["Title"] = "Home Page";
+            LoadMenu();            
         }
 
         public IActionResult OnPost()
         {
             LoadMenu();
             QuotesList = CreateRequest(Param);
-
+            ViewData["Title"] = _context.Tickers.FirstOrDefault(x => x.TickerValue == Param.Ticker).TickerName;
             return Page();
         }
 
