@@ -37,28 +37,12 @@ namespace FinProjNew.Pages
 
         public void OnGet()
         {
-            if(!_context.Tickers.Any())
-            {
-                List<Ticker> tickers = Parse.GetTickers("https://finance.yahoo.com/commodities");
-                foreach(var ticker in tickers)
-                {
-                    _context.Tickers.Add(ticker);
-                }
-                _context.SaveChanges();
-            }
-
-            TickersList = _context.Tickers.Select(x => new SelectListItem { Text = x.TickerName, Value = x.TickerValue }).ToList();
-            TickersList.Insert(0, new SelectListItem { Text = "Select a ticker", Value = "" });
-            
-            Timeframe timeframe = new Timeframe();
-            for(int i = 0; i < timeframe.TimeframeName.Count(); i++)
-            {
-                TimeframeList.Add(new SelectListItem { Text = timeframe.TimeframeName[i], Value = timeframe.TimeframeValue[i] });
-            }
+            LoadMenu();
         }
 
         public IActionResult OnPost()
-        {   
+        {
+            LoadMenu();
             QuotesList = CreateRequest(Param);
 
             return Page();
@@ -73,6 +57,28 @@ namespace FinProjNew.Pages
             List<Quote> Quotes = Parse.ParseQuotes(datesHeaders, quotes);
 
             return Quotes;
+        }
+
+        public void LoadMenu()
+        {
+            if (!_context.Tickers.Any())
+            {
+                List<Ticker> tickers = Parse.GetTickers("https://finance.yahoo.com/commodities");
+                foreach (var ticker in tickers)
+                {
+                    _context.Tickers.Add(ticker);
+                }
+                _context.SaveChanges();
+            }
+
+            TickersList = _context.Tickers.Select(x => new SelectListItem { Text = x.TickerName, Value = x.TickerValue }).ToList();
+            TickersList.Insert(0, new SelectListItem { Text = "Select a ticker", Value = "" });
+
+            Timeframe timeframe = new Timeframe();
+            for (int i = 0; i < timeframe.TimeframeName.Count(); i++)
+            {
+                TimeframeList.Add(new SelectListItem { Text = timeframe.TimeframeName[i], Value = timeframe.TimeframeValue[i] });
+            }
         }
     }
 }
